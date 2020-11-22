@@ -8,6 +8,82 @@
 // ======== OBJECTS DEFINITIONS ========
 // Define your objects here
 
+const dog = {
+  species: "dog",
+  name: "Toby",
+  gender: "male",
+  legs: 4,
+  hands: 0,
+  saying: "Woof-woof!",
+  friends: [
+    "Puss"
+  ]
+};
+
+const cat = {
+  species: "cat",
+  name: "Puss",
+  gender: "male",
+  legs: 4,
+  hands: 0,
+  saying: "Meow!",
+  friends: [
+    "Toby",
+    "Halley"
+  ]
+};
+
+const man = {
+  species: "human",
+  name: "Jack",
+  gender: "male",
+  legs: 2,
+  hands: 2,
+  saying: "Hey baby!",
+  friends: [
+    "Jennie",
+    "Halley"
+  ]
+};
+
+const woman = {
+  species: "human",
+  name: "Jennie",
+  gender: "female",
+  legs: 2,
+  hands: 2,
+  saying: "Hi darling!",
+  friends: [
+    "Jack",
+    "Toby"
+  ]
+};
+
+const catWoman = {
+  species: "super-hero",
+  name: "Halley",
+  gender: "female",
+  legs: 2,
+  hands: 2,
+  saying: cat.saying,
+  friends: [
+    "Puss"
+  ]
+};
+
+const inhabitants = [dog, cat, man, woman, catWoman];
+
+inhabitants.forEach((item) => {
+  let description = "";
+  for (let key in item) {
+    if (typeof(item[key]) == "object") {
+      description = description + item[key].join(', ');
+    } else {
+      description = description + item[key] + "; ";
+    };
+  };
+  print(description);
+});
 
 // ======== OUTPUT ========
 /* Use print(message) for output.
@@ -27,5 +103,3 @@
    print('human; <strong>John</strong>; male; 2; 2; <em>Hello world!</em>; Rex, Tom, Jenny');
    print('human; <strong>John</strong>; male; 2; 2; <em>Hello world!</em>; Rex, Tom, Jenny', 'div');
    */
-
-
